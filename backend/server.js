@@ -14,6 +14,7 @@ const port = process.env.PORT || 4000;
 
 // Middlewares
 app.use(express.json());
+
 app.use(cors());
 
 // DB connection
@@ -24,7 +25,7 @@ connectDB()
   .catch((err) => {
     console.error('Error connecting to database:', err);
   });
-
+// endpoints
 // API endpoints
 app.use("/api/food", foodRouter);
 app.use("/images", express.static('uploads'));
